@@ -10,7 +10,8 @@ const testimonials = [
     role: 'CEO, TechVision Inc.',
     content: 'Working with Joseph was transformative for our brand. His attention to detail and technical expertise delivered results beyond our expectations. The website performs flawlessly and looks absolutely stunning.',
     rating: 5,
-    image: 'SM'
+    image: '/testimonials/sarah-mitchell.png',
+    initials: 'SM'
   },
   {
     id: 2,
@@ -18,7 +19,8 @@ const testimonials = [
     role: 'Founder, Horizon Digital',
     content: 'Joseph brings a rare combination of design sensibility and technical prowess. Our new platform has increased conversions by 150% and user engagement has never been higher.',
     rating: 5,
-    image: 'MC'
+    image: '/testimonials/marcus-chen.png',
+    initials: 'MC'
   },
   {
     id: 3,
@@ -26,7 +28,8 @@ const testimonials = [
     role: 'VP Marketing, Quantum Labs',
     content: 'Exceptional work from start to finish. Joseph understood our vision immediately and translated it into a digital experience that truly represents our brand. Highly recommended!',
     rating: 5,
-    image: 'ER'
+    image: '/testimonials/emily-rodriguez.png',
+    initials: 'ER'
   }
 ];
 
@@ -96,8 +99,17 @@ export function Testimonials() {
                 {/* Author */}
                 <div className="relative flex items-center gap-4">
                   {/* Avatar */}
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white font-medium">
-                    {testimonial.image}
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 overflow-hidden flex items-center justify-center">
+                    <img 
+                      src={testimonial.image} 
+                      alt={testimonial.name}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        // Fallback to initials if image fails to load
+                        e.currentTarget.style.display = 'none';
+                        e.currentTarget.parentElement!.innerHTML = `<span class="text-white font-medium">${testimonial.initials}</span>`;
+                      }}
+                    />
                   </div>
                   
                   <div>

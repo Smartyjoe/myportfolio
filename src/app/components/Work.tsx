@@ -11,6 +11,7 @@ const projects = [
     description: 'A comprehensive financial management platform with real-time analytics and AI-powered insights.',
     tech: ['React', 'TypeScript', 'Three.js', 'Node.js'],
     gradient: 'from-blue-600/20 to-cyan-600/20',
+    image: '/projects/nexus-financial.png',
     year: '2024'
   },
   {
@@ -20,6 +21,7 @@ const projects = [
     description: 'Award-winning portfolio website featuring immersive 3D experiences and cutting-edge animations.',
     tech: ['Next.js', 'WebGL', 'GSAP', 'Tailwind'],
     gradient: 'from-purple-600/20 to-pink-600/20',
+    image: '/projects/lumina-studio.png',
     year: '2024'
   },
   {
@@ -29,6 +31,7 @@ const projects = [
     description: 'Mobile-first application helping companies track and reduce their carbon footprint.',
     tech: ['React Native', 'Firebase', 'Chart.js'],
     gradient: 'from-green-600/20 to-emerald-600/20',
+    image: '/projects/ecotrack-app.png',
     year: '2023'
   },
   {
@@ -38,6 +41,7 @@ const projects = [
     description: 'High-performance e-commerce platform with seamless checkout and inventory management.',
     tech: ['Next.js', 'Stripe', 'Shopify', 'PostgreSQL'],
     gradient: 'from-orange-600/20 to-red-600/20',
+    image: '/projects/velocity-commerce.png',
     year: '2023'
   }
 ];
@@ -89,6 +93,13 @@ export function Work() {
                 <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm">
                   {/* Project Visual */}
                   <div className={`relative aspect-[4/3] bg-gradient-to-br ${project.gradient} overflow-hidden`}>
+                    {/* Project Image */}
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-80"
+                    />
+                    
                     {/* Animated Grid */}
                     <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]" />
                     
@@ -122,7 +133,7 @@ export function Work() {
                     />
 
                     {/* Year Badge */}
-                    <div className="absolute top-6 right-6 px-3 py-1 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 text-xs text-gray-300">
+                    <div className="absolute top-6 right-6 px-3 py-1 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 text-xs text-gray-300 z-10">
                       {project.year}
                     </div>
 

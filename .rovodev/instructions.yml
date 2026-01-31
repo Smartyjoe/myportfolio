@@ -1,0 +1,4 @@
+instructions:
+  - name: image-gen
+    description: "Generates an image with custom prompt, name, path, and resolution."
+    content_file: "image_logic.md"

@@ -91,6 +91,13 @@ export function About() {
             className="relative"
           >
             <div className="relative aspect-square rounded-3xl bg-gradient-to-br from-indigo-600/20 to-purple-600/20 backdrop-blur-sm border border-white/10 overflow-hidden">
+              {/* About Visual Image */}
+              <img 
+                src="/images/about-visual.png" 
+                alt="Design and Development"
+                className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-70"
+              />
+              
               {/* Abstract Geometric Pattern */}
               <div className="absolute inset-0">
                 <motion.div
